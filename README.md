@@ -1,36 +1,75 @@
-# Task2 Prompt Optimization
+# 整体Task实现思路(人工实现部分)
 
-## 优化产物
+- 1.首先我查看了任务需求，然后考虑使用AI来完成整个任务。
+- 2.我设计了一个AGENTS.md文件，来告诉AI这个项目是做什么的，需要怎么做。
+- 3.在AGENTS.md中，我分步骤拆解了一下需要完成的任务。
+    - 比如第一步先找出 `task1_classifier.py` 中存在的问题，并输出问题原因、解决方案至`README.md` 文件中；
+    - 第二步优化提示词，并输出新的提示词到文件 `task1_prompt_optimized.md`;
+    - 第三步让AI通过之前发现的问题和优化后的提示词，完成代码的优化，并将内容输出到 `task1_classifier_optimized.py`
+- 5.然后我review了AI生成的代码，以确保它不会出现问题。
+- 4.然后运行代码，查看优化前后的结果对比。并且我在 `task1_test_samples.json` 中添加了一个ID=0的异常case，以验证AI优化后的准确性。
 
-- 新增优化后的提示词文件：`task1_prompt_optimized.md`
+# 工具使用
 
-## 改动理由
+- IDE工具：Pycharm <img src="_screenshot/ide.png" alt="ide" width="300" height="200">
+- AI工具：codex <img src="_screenshot/ai_tools.png" alt="ai tools" width="300" height="200">
 
-1. **拆分 System Prompt 和 User Message**
+---
+*** 以下内容均为AI输出，包含运行示例，和代码检查、提示词优化中发现的问题以及优化思路 ***
 
-   原始 Prompt 将角色、分类规则和用户问题全部放在 user message 中，指令层级不清晰。优化后使用 System Prompt 固定模型角色、合法标签、分类定义和输出规则，User Message 只承载待分类样本，便于代码复用和批量测试。
+# 运行示例
 
-2. **补充完整类别定义和典型场景**
+## 运行前准备
 
-   原始 Prompt 只列出类别名称，缺少边界说明。优化后为“退款退货、物流查询、账号问题、商品咨询、投诉建议、其他”分别补充定义和典型问题，减少模型只依赖关键词猜测导致的误判。
+请在项目根目录运行：
 
-3. **增加易混淆类别的判定规则**
+```powershell
+cd D:\Project\xiaoduo-ai-task
+```
 
-   测试样本中存在退款与物流、业务咨询与投诉建议混合出现的情况。优化 Prompt 明确规定退款进度归入“退款退货”，包裹位置和配送异常归入“物流查询”；如果用户主要表达投诉、举报或建议，则归入“投诉建议”，否则按具体业务诉求分类。
+如果使用项目虚拟环境，先激活：
 
-4. **明确多意图问题的优先级**
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
 
-   原始 Prompt 没有说明一条问题同时涉及多个类别时如何处理。优化后要求优先判断用户当前最想解决的主要诉求，避免模型因次要关键词改变分类。
+运行前确认 `.env` 中已配置：
 
-5. **限制输出为可解析 JSON**
+- `OPENAI_API_KEY`
+- `MODEL_NAME`
+- `BASE_URL`
 
-   原始 Prompt 仅要求返回类别名，模型仍可能输出解释、标点或同义表述。优化后强制只输出 JSON 对象，并限定字段为 `id`、`confidence`、`label`，其中 `label` 必须来自固定标签集合，便于后续用 `json.loads` 解析和校验。
+## 准确率评估
 
-6. **增加兜底规则**
+执行 Before/After 准确率评估：
 
-   对问候、闲聊、无意义文本或无法判断意图的问题，优化 Prompt 明确归为“其他”，降低模型过度分类的概率。
+```powershell
+python task1_classifier_optimized.py evaluate task1_test_samples.json task1_eval_report.json
+```
 
-# Task1 Code Review
+该命令会在终端输出：
+
+```text
+Before Accuracy: ...
+After Accuracy: ...
+Improvement: ...
+```
+
+并将详细预测结果写入 `task1_eval_report.json`。
+
+## 批量分类
+
+只使用优化版 Prompt 执行批量分类：
+
+```powershell
+python task1_classifier_optimized.py classify task1_test_samples.json task1_predictions.json
+```
+
+该命令会将分类结果写入 `task1_predictions.json`。
+
+---
+
+# Step1 Code Review
 
 ## Review 对象
 
@@ -45,7 +84,8 @@
 
 **问题原因：**
 
-当前代码直接在源码中写入 `openai.api_key`，并固定使用 `MODEL = "gpt-4o-mini"`。这会导致密钥随代码提交、复制或分享时泄露，也会使不同环境无法通过配置切换 API Key、模型名称和服务地址。项目说明中已经提到 `.env` 中配置了 `OPENAI_API_KEY`、`MODEL_NAME`、`BASE_URL`，但当前实现没有读取这些配置。
+当前代码直接在源码中写入 `openai.api_key`，并固定使用 `MODEL = "gpt-4o-mini"`。这会导致密钥随代码提交、复制或分享时泄露，也会使不同环境无法通过配置切换
+API Key、模型名称和服务地址。项目说明中已经提到 `.env` 中配置了 `OPENAI_API_KEY`、`MODEL_NAME`、`BASE_URL`，但当前实现没有读取这些配置。
 
 **影响：**
 
@@ -86,7 +126,8 @@
 
 **问题原因：**
 
-代码直接取 `response.choices[0].message.content.strip()` 作为分类结果，没有做任何格式解析、合法标签校验或兜底处理。虽然 Prompt 要求“只回复类别名称”，但 LLM 仍可能输出解释文本、标点、JSON、同义词或多个类别。
+代码直接取 `response.choices[0].message.content.strip()` 作为分类结果，没有做任何格式解析、合法标签校验或兜底处理。虽然
+Prompt 要求“只回复类别名称”，但 LLM 仍可能输出解释文本、标点、JSON、同义词或多个类别。
 
 **影响：**
 
@@ -126,7 +167,8 @@
 
 **问题原因：**
 
-代码假设输入 JSON 一定是列表，且每个元素都包含 `id` 和 `question` 字段。但实际数据可能为空、字段缺失、字段类型不正确，或 JSON 文件格式错误。
+代码假设输入 JSON 一定是列表，且每个元素都包含 `id` 和 `question` 字段。但实际数据可能为空、字段缺失、字段类型不正确，或 JSON
+文件格式错误。
 
 **影响：**
 
@@ -146,7 +188,8 @@
 
 **问题原因：**
 
-`classify_question` 同时负责拼接 Prompt、调用模型、解析结果，并且分类标签硬编码在字符串中。Prompt 文件和类别定义文件没有被复用，导致文档与实际代码容易不一致。
+`classify_question` 同时负责拼接 Prompt、调用模型、解析结果，并且分类标签硬编码在字符串中。Prompt
+文件和类别定义文件没有被复用，导致文档与实际代码容易不一致。
 
 **影响：**
 
@@ -159,3 +202,40 @@
 - 将标签列表、Prompt 模板、LLM 客户端初始化、结果解析拆分为独立函数。
 - 优先从 `task1_prompt_optimized.md` 或常量模板加载 Prompt，避免文档与代码脱节。
 - 保留清晰的函数边界，便于后续添加准确率评估和回归测试。
+
+---
+
+# Step2 Prompt Optimization
+
+## 优化产物
+
+- 新增优化后的提示词文件：`task1_prompt_optimized.md`
+
+## 改动理由
+
+1. **拆分 System Prompt 和 User Message**
+
+   原始 Prompt 将角色、分类规则和用户问题全部放在 user message 中，指令层级不清晰。优化后使用 System Prompt
+   固定模型角色、合法标签、分类定义和输出规则，User Message 只承载待分类样本，便于代码复用和批量测试。
+
+2. **补充完整类别定义和典型场景**
+
+   原始 Prompt 只列出类别名称，缺少边界说明。优化后为“退款退货、物流查询、账号问题、商品咨询、投诉建议、其他”分别补充定义和典型问题，减少模型只依赖关键词猜测导致的误判。
+
+3. **增加易混淆类别的判定规则**
+
+   测试样本中存在退款与物流、业务咨询与投诉建议混合出现的情况。优化 Prompt
+   明确规定退款进度归入“退款退货”，包裹位置和配送异常归入“物流查询”；如果用户主要表达投诉、举报或建议，则归入“投诉建议”，否则按具体业务诉求分类。
+
+4. **明确多意图问题的优先级**
+
+   原始 Prompt 没有说明一条问题同时涉及多个类别时如何处理。优化后要求优先判断用户当前最想解决的主要诉求，避免模型因次要关键词改变分类。
+
+5. **限制输出为可解析 JSON**
+
+   原始 Prompt 仅要求返回类别名，模型仍可能输出解释、标点或同义表述。优化后强制只输出 JSON 对象，并限定字段为 `id`、
+   `confidence`、`label`，其中 `label` 必须来自固定标签集合，便于后续用 `json.loads` 解析和校验。
+
+6. **增加兜底规则**
+
+   对问候、闲聊、无意义文本或无法判断意图的问题，优化 Prompt 明确归为“其他”，降低模型过度分类的概率。
