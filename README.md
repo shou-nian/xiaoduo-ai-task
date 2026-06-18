@@ -6,8 +6,8 @@
     - 比如第一步先找出 `task1_classifier.py` 中存在的问题，并输出问题原因、解决方案至`README.md` 文件中；
     - 第二步优化提示词，并输出新的提示词到文件 `task1_prompt_optimized.md`;
     - 第三步让AI通过之前发现的问题和优化后的提示词，完成代码的优化，并将内容输出到 `task1_classifier_optimized.py`
-- 5.然后我review了AI生成的代码，以确保它不会出现问题。
-- 4.然后运行代码，查看优化前后的结果对比。并且我在 `task1_test_samples.json` 中添加了一个ID=0的异常case，以验证AI优化后的准确性。
+- 4.然后我review了AI生成的代码，以确保它不会出现问题。
+- 5.然后运行代码，查看优化前后的结果对比。并且我在 `task1_test_samples.json` 中添加了一个ID=0的异常case，以验证AI优化后的准确性。
 
 # 工具使用
 
