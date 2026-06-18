@@ -1,0 +1,630 @@
+{
+  "before_accuracy": 0.967741935483871,
+  "after_accuracy": 0.967741935483871,
+  "improvement": 0.0,
+  "total": 31,
+  "before_predictions": [
+    {
+      "id": "0",
+      "question": "我想要一个Iphone17，但是我没有钱，你可以送我一个吗",
+      "expected_label": "账号问题",
+      "predicted_label": "其他",
+      "is_correct": false,
+      "confidence": 0.0,
+      "raw_response": "其他",
+      "error": ""
+    },
+    {
+      "id": "1",
+      "question": "我买的衣服想退掉，怎么操作",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "2",
+      "question": "快递到哪了，三天了还没到",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "物流查询",
+      "error": ""
+    },
+    {
+      "id": "3",
+      "question": "我忘记密码了，怎么找回",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "账号问题",
+      "error": ""
+    },
+    {
+      "id": "4",
+      "question": "这个耳机支持降噪吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "商品咨询",
+      "error": ""
+    },
+    {
+      "id": "5",
+      "question": "你们客服态度太差了，我要投诉",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "投诉建议",
+      "error": ""
+    },
+    {
+      "id": "6",
+      "question": "退款什么时候能到账",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "7",
+      "question": "包裹显示已签收但我没收到",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "物流查询",
+      "error": ""
+    },
+    {
+      "id": "8",
+      "question": "怎么修改绑定的手机号",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "账号问题",
+      "error": ""
+    },
+    {
+      "id": "9",
+      "question": "这款鞋有42码的吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "商品咨询",
+      "error": ""
+    },
+    {
+      "id": "10",
+      "question": "商品质量有问题，我要举报",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "投诉建议",
+      "error": ""
+    },
+    {
+      "id": "11",
+      "question": "七天无理由退货怎么退",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "12",
+      "question": "物流信息两天没更新了",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "物流查询",
+      "error": ""
+    },
+    {
+      "id": "13",
+      "question": "账号被冻结了，怎么回事",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "账号问题",
+      "error": ""
+    },
+    {
+      "id": "14",
+      "question": "这个手机壳是硅胶的还是塑料的",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "商品咨询",
+      "error": ""
+    },
+    {
+      "id": "15",
+      "question": "建议你们增加夜间配送选项",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "投诉建议",
+      "error": ""
+    },
+    {
+      "id": "16",
+      "question": "退货邮费谁出",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "17",
+      "question": "快递能改派送地址吗",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "物流查询",
+      "error": ""
+    },
+    {
+      "id": "18",
+      "question": "我收到一条短信说异地登录了，是真的吗",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "账号问题",
+      "error": ""
+    },
+    {
+      "id": "19",
+      "question": "这个包是真皮的吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "商品咨询",
+      "error": ""
+    },
+    {
+      "id": "20",
+      "question": "买了三天就坏了，什么破质量",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "投诉建议",
+      "error": ""
+    },
+    {
+      "id": "21",
+      "question": "退款已经申请了但是快递还没寄回去，我可以先取消退货吗",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "22",
+      "question": "我的快递到了但放错快递柜了怎么办",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "物流查询",
+      "error": ""
+    },
+    {
+      "id": "23",
+      "question": "你们这个退货流程也太麻烦了吧，我都搞不懂怎么操作",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "投诉建议",
+      "error": ""
+    },
+    {
+      "id": "24",
+      "question": "我想问下这个退款的事顺便看看快递到没到",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "25",
+      "question": "东西寄错地址了，能帮我改一下",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "物流查询",
+      "error": ""
+    },
+    {
+      "id": "26",
+      "question": "我要退的这个订单里有两个商品，只退一个行不行",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "退款退货",
+      "error": ""
+    },
+    {
+      "id": "27",
+      "question": "这个充电宝能带上飞机吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "商品咨询",
+      "error": ""
+    },
+    {
+      "id": "28",
+      "question": "嗯嗯好的谢谢",
+      "expected_label": "其他",
+      "predicted_label": "其他",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "其他",
+      "error": ""
+    },
+    {
+      "id": "29",
+      "question": "？？？",
+      "expected_label": "其他",
+      "predicted_label": "其他",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "其他",
+      "error": ""
+    },
+    {
+      "id": "30",
+      "question": "你好",
+      "expected_label": "其他",
+      "predicted_label": "其他",
+      "is_correct": true,
+      "confidence": 0.0,
+      "raw_response": "其他",
+      "error": ""
+    }
+  ],
+  "after_predictions": [
+    {
+      "id": "0",
+      "question": "我想要一个Iphone17，但是我没有钱，你可以送我一个吗",
+      "expected_label": "账号问题",
+      "predicted_label": "其他",
+      "is_correct": false,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"0\",\"confidence\":0.98,\"label\":\"其他\"}",
+      "error": ""
+    },
+    {
+      "id": "1",
+      "question": "我买的衣服想退掉，怎么操作",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"1\",\"confidence\":0.99,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "2",
+      "question": "快递到哪了，三天了还没到",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"2\",\"confidence\":0.99,\"label\":\"物流查询\"}",
+      "error": ""
+    },
+    {
+      "id": "3",
+      "question": "我忘记密码了，怎么找回",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"3\",\"confidence\":0.99,\"label\":\"账号问题\"}",
+      "error": ""
+    },
+    {
+      "id": "4",
+      "question": "这个耳机支持降噪吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"4\",\"confidence\":0.99,\"label\":\"商品咨询\"}",
+      "error": ""
+    },
+    {
+      "id": "5",
+      "question": "你们客服态度太差了，我要投诉",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"5\",\"confidence\":0.99,\"label\":\"投诉建议\"}",
+      "error": ""
+    },
+    {
+      "id": "6",
+      "question": "退款什么时候能到账",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"6\",\"confidence\":0.99,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "7",
+      "question": "包裹显示已签收但我没收到",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"7\",\"confidence\":0.99,\"label\":\"物流查询\"}",
+      "error": ""
+    },
+    {
+      "id": "8",
+      "question": "怎么修改绑定的手机号",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"8\",\"confidence\":0.99,\"label\":\"账号问题\"}",
+      "error": ""
+    },
+    {
+      "id": "9",
+      "question": "这款鞋有42码的吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"9\",\"confidence\":0.99,\"label\":\"商品咨询\"}",
+      "error": ""
+    },
+    {
+      "id": "10",
+      "question": "商品质量有问题，我要举报",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"10\",\"confidence\":0.99,\"label\":\"投诉建议\"}",
+      "error": ""
+    },
+    {
+      "id": "11",
+      "question": "七天无理由退货怎么退",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"11\",\"confidence\":0.99,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "12",
+      "question": "物流信息两天没更新了",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"12\",\"confidence\":0.99,\"label\":\"物流查询\"}",
+      "error": ""
+    },
+    {
+      "id": "13",
+      "question": "账号被冻结了，怎么回事",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"13\",\"confidence\":0.99,\"label\":\"账号问题\"}",
+      "error": ""
+    },
+    {
+      "id": "14",
+      "question": "这个手机壳是硅胶的还是塑料的",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"14\",\"confidence\":0.98,\"label\":\"商品咨询\"}",
+      "error": ""
+    },
+    {
+      "id": "15",
+      "question": "建议你们增加夜间配送选项",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"15\",\"confidence\":0.98,\"label\":\"投诉建议\"}",
+      "error": ""
+    },
+    {
+      "id": "16",
+      "question": "退货邮费谁出",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"16\",\"confidence\":0.99,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "17",
+      "question": "快递能改派送地址吗",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"17\",\"confidence\":0.99,\"label\":\"物流查询\"}",
+      "error": ""
+    },
+    {
+      "id": "18",
+      "question": "我收到一条短信说异地登录了，是真的吗",
+      "expected_label": "账号问题",
+      "predicted_label": "账号问题",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"18\",\"confidence\":0.98,\"label\":\"账号问题\"}",
+      "error": ""
+    },
+    {
+      "id": "19",
+      "question": "这个包是真皮的吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"19\",\"confidence\":0.99,\"label\":\"商品咨询\"}",
+      "error": ""
+    },
+    {
+      "id": "20",
+      "question": "买了三天就坏了，什么破质量",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"20\",\"confidence\":0.98,\"label\":\"投诉建议\"}",
+      "error": ""
+    },
+    {
+      "id": "21",
+      "question": "退款已经申请了但是快递还没寄回去，我可以先取消退货吗",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"21\",\"confidence\":0.99,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "22",
+      "question": "我的快递到了但放错快递柜了怎么办",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"22\",\"confidence\":0.99,\"label\":\"物流查询\"}",
+      "error": ""
+    },
+    {
+      "id": "23",
+      "question": "你们这个退货流程也太麻烦了吧，我都搞不懂怎么操作",
+      "expected_label": "投诉建议",
+      "predicted_label": "投诉建议",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"23\",\"confidence\":0.98,\"label\":\"投诉建议\"}",
+      "error": ""
+    },
+    {
+      "id": "24",
+      "question": "我想问下这个退款的事顺便看看快递到没到",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.92,
+      "raw_response": "{\"id\":\"24\",\"confidence\":0.92,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "25",
+      "question": "东西寄错地址了，能帮我改一下",
+      "expected_label": "物流查询",
+      "predicted_label": "物流查询",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"25\",\"confidence\":0.98,\"label\":\"物流查询\"}",
+      "error": ""
+    },
+    {
+      "id": "26",
+      "question": "我要退的这个订单里有两个商品，只退一个行不行",
+      "expected_label": "退款退货",
+      "predicted_label": "退款退货",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"26\",\"confidence\":0.99,\"label\":\"退款退货\"}",
+      "error": ""
+    },
+    {
+      "id": "27",
+      "question": "这个充电宝能带上飞机吗",
+      "expected_label": "商品咨询",
+      "predicted_label": "商品咨询",
+      "is_correct": true,
+      "confidence": 0.98,
+      "raw_response": "{\"id\":\"27\",\"confidence\":0.98,\"label\":\"商品咨询\"}",
+      "error": ""
+    },
+    {
+      "id": "28",
+      "question": "嗯嗯好的谢谢",
+      "expected_label": "其他",
+      "predicted_label": "其他",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"28\",\"confidence\":0.99,\"label\":\"其他\"}",
+      "error": ""
+    },
+    {
+      "id": "29",
+      "question": "？？？",
+      "expected_label": "其他",
+      "predicted_label": "其他",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"29\",\"confidence\":0.99,\"label\":\"其他\"}",
+      "error": ""
+    },
+    {
+      "id": "30",
+      "question": "你好",
+      "expected_label": "其他",
+      "predicted_label": "其他",
+      "is_correct": true,
+      "confidence": 0.99,
+      "raw_response": "{\"id\":\"30\",\"confidence\":0.99,\"label\":\"其他\"}",
+      "error": ""
+    }
+  ]
+}
