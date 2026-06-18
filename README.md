@@ -85,7 +85,7 @@ python task1_classifier_optimized.py classify task1_test_samples.json task1_pred
 **问题原因：**
 
 当前代码直接在源码中写入 `openai.api_key`，并固定使用 `MODEL = "gpt-4o-mini"`。这会导致密钥随代码提交、复制或分享时泄露，也会使不同环境无法通过配置切换
-API Key、模型名称和服务地址。项目说明中已经提到 `.env` 中配置了 `OPENAI_API_KEY`、`MODEL_NAME`、`BASE_URL`，但当前实现没有读取这些配置。
+API Key、模型名称和服务地址。
 
 **影响：**
 
