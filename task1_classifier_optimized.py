@@ -375,13 +375,31 @@ def evaluate_before_after(input_file: str | Path) -> dict[str, Any]:
     before_accuracy = calculate_accuracy(samples, before_predictions)
     after_accuracy = calculate_accuracy(samples, after_predictions)
 
+    def build_prediction_records(predictions: list[ClassificationResult]) -> list[dict[str, Any]]:
+        records: list[dict[str, Any]] = []
+        for sample, prediction in zip(samples, predictions, strict=True):
+            expected_label = sample.get("label", "")
+            records.append(
+                {
+                    "id": str(sample.get("id", prediction.id)),
+                    "question": sample.get("question", prediction.question),
+                    "expected_label": expected_label,
+                    "predicted_label": prediction.label,
+                    "is_correct": prediction.label == normalize_label(expected_label),
+                    "confidence": prediction.confidence,
+                    "raw_response": prediction.raw_response,
+                    "error": prediction.error,
+                }
+            )
+        return records
+
     return {
         "before_accuracy": before_accuracy,
         "after_accuracy": after_accuracy,
         "improvement": after_accuracy - before_accuracy,
         "total": len(samples),
-        "before_predictions": [result.__dict__ for result in before_predictions],
-        "after_predictions": [result.__dict__ for result in after_predictions],
+        "before_predictions": build_prediction_records(before_predictions),
+        "after_predictions": build_prediction_records(after_predictions),
     }
 
 
